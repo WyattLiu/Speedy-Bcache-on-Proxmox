@@ -14,7 +14,7 @@ apt install bcache-tools mdadm
 
 ## 2. Create RAID Array
 
-Create a RAID1 array from two drives:
+Create a RAID1 array from two drives: (this is the slow part of the final product, I opt for mirror to reduce the lighthood to fail, but single point of failure remains at SSD and writeback, so a good UPS and rsync backup is required)
 ```bash
 # First, clear any existing filesystems
 wipefs -a /dev/sda  # check your drive
