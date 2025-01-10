@@ -10,6 +10,8 @@ Why use zfs on top of bcache? Try to take advantage of its ARC and checksum and 
 Why not use zfs's ZIL and L2ARC SSD -> not performant, zfs is more on the safety side. Performance is around HDD performance or worse.
 Generally, just like widely spread words on ZFS L2ARC, it's not very useful; large RAM for ARC is good enough.
 
+Follow this guide, you will have a storage device to the OS that is large and quick write and read performance at SSD level.
+
 # Complete Bcache Setup Guide
 
 ## 1. Prerequisites
