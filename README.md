@@ -241,7 +241,7 @@ echo 10000 > /sys/fs/bcache/058324af-f00d-4cf0-a3b6-c7a381d1c33f/congested_read_
 echo 0 > /sys/fs/bcache/058324af-f00d-4cf0-a3b6-c7a381d1c33f/bdev0/sequential_cutoff
 
 # Set writeback parameters
-echo 50 > /sys/block/bcache0/bcache/writeback_percent
+echo 50 > /sys/block/bcache0/bcache/writeback_percent # you will get 40, as it is hardcoded in driver https://unix.stackexchange.com/questions/391435/bcache-writeback-percent-max-value
 echo 30 > /sys/block/bcache0/bcache/writeback_delay
 
 sudo blockdev --setra 8192 /dev/bcache0
