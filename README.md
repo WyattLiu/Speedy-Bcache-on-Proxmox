@@ -1,6 +1,15 @@
 # Speedy-Bcache-on-Proxmox
 Under Proxmox's condition, this serves a guidance on what to do to truely speedup a storage space for vm to use
 
+# Motivation
+To have a hybrid drive usable in production. My use case is lightroom classic photos. Safety is ensured by UPS and rsync to another server.
+
+Why create /dev/md0? mdadm will result in a block device required by bcache, so zfs is not used.
+Why use zfs on top of bcache? Try to take advantage of its ARC and checksum and easy to allow proxmox VMs' to use as disk images.
+
+Why not use zfs's ZIL and L2ARC SSD -> not performant, zfs is more on the safety side. Performance is around HDD performance or worse.
+Generally, just like widely spread words on ZFS L2ARC, it's not very useful; large RAM for ARC is good enough.
+
 # Complete Bcache Setup Guide
 
 ## 1. Prerequisites
